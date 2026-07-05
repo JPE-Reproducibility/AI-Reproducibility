@@ -1,0 +1,400 @@
+---
+title: "Reproducibility in the Age of LLMs"
+subtitle: "What Changes, What Doesn't, and Where the Leverage Is"
+format: clean-revealjs
+author:
+  - name: Florian Oswald
+    orcid: 0000-0001-7737-2038
+    email: florian.oswald@gmail.com
+    affiliations: University of Turin · Collegio Carlo Alberto · Data Editor, Journal of Political Economy
+date: last-modified
+highlight-style: pygments
+---
+
+## Three Questions {#sec-questions}
+
+### The talk in one slide
+
+1. Will LLMs solve our reproducibility troubles?
+2. Will LLMs help **authors** prepare replication packages?
+3. Will LLMs help **data editors** check replication packages?
+
+::: {.callout-note}
+Not: are LLMs better than human RAs? (Not yet, and not the point.)
+Yes: can LLMs *augment* human replicators?
+:::
+
+---
+
+## What Is an LLM?
+
+### Before we go further
+
+**LLM:** a model trained on large text corpora to predict and generate language. Weights are fixed after training. Not magic; not AGI. A very capable pattern-completion engine.
+
+**Coding agent:** an LLM with the ability to read/write files and execute code in a loop. Observes errors, revises, retries.
+
+**Algorithm:** a deterministic sequence of steps. Given the same input, always produces the same output. LLMs are *not* algorithms in this sense.
+
+::: {.fragment}
+Why this matters: reproducibility *requires* determinism or controlled stochasticity.
+:::
+
+---
+
+## How Economists Use LLMs
+
+### Three modes — only one creates a new reproducibility problem
+
+| Mode | What it is | New reproducibility problem? |
+|------|-----------|------------------------------|
+| Statistical learning | Deep nets, nonparametric estimation, model solving | No — code is code |
+| Code assistant | LLM writes your Stata/Python/R | No — output is conventional code |
+| **Data pipeline** | **LLM generates, classifies, or scores research data** | **Yes** |
+
+::: {.fragment}
+**Row 3 only.** If the LLM wrote your loop: irrelevant.
+If the LLM assigned sentiment scores that appear in a regression: reproducibility problem.
+:::
+
+---
+
+## Q1: Will LLMs Solve Reproducibility? {#sec-q1}
+
+### The dream vs. reality
+
+**Dream:** Elliott's tool. Supply package URL, get a coffee, agent cranks through it, reports back.
+
+**Reality:** Depends entirely on the package. Three cases:
+
+---
+
+## Case 1: Complete, Containerized Package
+
+**Docker or Singularity image, working README, all data present.**
+
+An agent can run it. But so can a shell script.
+
+The binding constraint was never intelligence — it was a compatible environment.
+
+- Singularity/Apptainer was built for HPC — Docker-on-HPC is largely solved
+- Nuvolos is another provisioned solution
+- A junior RA with no AI can reproduce this package
+
+::: {.fragment}
+Agent adds **speed**, not **capability**. This is the standard to push toward.
+:::
+
+---
+
+## Case 2: Package Has Gaps
+
+**Missing deps · broken paths · incomplete README · undocumented steps.**
+
+This is where an agent earns its keep:
+
+- Infers missing library versions from error messages
+- Fixes relative paths, finds undocumented dependencies
+- Iterates on environment setup across the economics multi-language zoo
+- A human replicator does this too — but it costs hours; an agent does it in minutes
+
+::: {.fragment}
+**Realistic near-term value:** not full automation, but force-multiplication on diagnostic work.
+:::
+
+---
+
+## Case 3: Missing License or Infrastructure
+
+**Package requires software or OS you don't have licensed or provisioned.**
+
+Agent is irrelevant. Problem is **budget and infrastructure**, not intelligence.
+
+- No LLM fixes a missing Stata license
+- No LLM provisions a GPU cluster your journal doesn't own
+- CASD (France) does this — annual budget of several million euros, dedicated engineer
+
+::: {.fragment}
+The right question is not "will LLMs solve reproducibility?"
+→ **"Where in the workflow does an LLM provide leverage?"**
+:::
+
+---
+
+## The Coordination Temptation {#sec-coordination}
+
+### "If everyone used Python/R/Julia..."
+
+Provisionability *would* improve. Mandate the **outcome** (must run in a clean container), not the tool. Language-agnostic. Already what SIVACOR does.
+
+But toolset standardization does **not** fix reproducibility-in-principle:
+
+- 31% of econ packages have a controller script — not a language problem
+- Dependency rot (BLAS/GDAL drift) hits Python and R as hard as Stata
+- Unset seeds, thread-order FP nondeterminism, GPU variance survive any mandate
+
+::: {.fragment}
+**Stata scores Yes/Yes/Yes on reproducibility-in-principle.**
+More reproducible than a closed LLM API. Problem isn't proprietary-ness — it's licensing cost.
+
+*(Also: you can't legally redistribute Stata in a public Docker image.)*
+:::
+
+---
+
+## Why Heterogeneity Motivates Agents
+
+### The messy world argument
+
+If economists coordinated on a clean uniform toolset, we'd need Case 2 agents less.
+
+Since they won't — methods lock-in, legacy workflows, disciplinary norms —
+**AI force-multiplication is the pragmatic substitute for coordination we'll never achieve.**
+
+Toolset heterogeneity is exactly what makes Case 2 agents valuable.
+
+---
+
+## Same Principle, New Problem {#sec-principle}
+
+### What changed and what didn't
+
+**The principle hasn't changed.** Author solely responsible for anything producing relevant output. "The LLM wrote it" is not a defense. Same rule as GAUSS, Stata, Python.
+
+**The mechanism for satisfying that principle is novel:**
+
+| Tool | Deterministic? | Archivable? | Re-runnable? |
+|------|---------------|-------------|--------------|
+| GAUSS / Stata / R | Yes | Yes (license or pin) | Yes |
+| Open-weight LLM (Llama, Mistral) | Yes (seed+temp) | Yes (weights on disk) | Yes, with effort |
+| Closed API (GPT-4, Claude) | No | No (silent updates) | No guarantee |
+
+::: {.fragment}
+"Just another tool" holds for rows 1–2. **Breaks on row 3.**
+`gpt-4o` today ≠ `gpt-4o` six months ago.
+:::
+
+---
+
+## The Rule Is the Same. The Infrastructure Is Not.
+
+### Honest position
+
+We are not lowering the standard.
+
+We are acknowledging that some tools make the standard harder to meet,
+and require authors to compensate with **disclosure** rather than re-runnability.
+
+::: {.fragment}
+**On archivability:** Hugging Face has no DOI system. Will GPT-3.5 be accessible in 10 years? Unknown.
+Prefer open weights for any pipeline step generating research data — say so in journal policy.
+:::
+
+---
+
+## Three-Layer Archive Taxonomy
+
+### What to preserve at each layer
+
+| Layer | What it is | Archive strategy |
+|-------|-----------|-----------------|
+| Pre-trained LLM | Base model weights | HuggingFace if open; model name+date if closed |
+| Fine-tuned LLM | Your weights | Privacy constraints may apply; document training data |
+| Analysis output | What the LLM returned | Always — include in package with DOI |
+
+::: {.fragment}
+Most economists use **layer 3** (prompt → output from closed API).
+Hardest layer to make reproducible. Easiest to archive.
+:::
+
+---
+
+## Q2: Will LLMs Help Authors? {#sec-q2}
+
+### DeadReckoning *(proposed / in development)*
+
+[github.com/floswald/DeadReckoning](https://github.com/floswald/DeadReckoning)
+
+The problem: author has working code on their machine, needs it to run on someone else's.
+Most economics research accumulates over years across multiple machines and collaborators.
+
+---
+
+## DeadReckoning: Two-Phase Pipeline
+
+**Phase 1 — Understand the package**
+- Detect languages used
+- Scan live installed environment
+- Reconstruct dependency graph rooted in LaTeX source
+- Every figure and table must trace back to a script
+
+**Phase 2 — Repair the pipeline**
+- Iterative build-test-fix loop on author's native machine
+- Handles R, Stata, Julia, Python, MATLAB
+- Docker containerization is the *last* step — fix natively first, then freeze
+
+---
+
+## DeadReckoning: Key Design Choices
+
+**Confidentiality protocol**
+Restricted mode: only code/metadata transmitted to remote LLM, never data values.
+Asks upfront. Author controls what leaves their machine.
+
+**No lockfile ≠ information is gone**
+Reconstructs software versions from file timestamps, code parsing, installed environment.
+Recovers history the author has forgotten.
+
+**AGENT_REPORT.md**
+Every decision and assumption documented.
+Author must be able to explain it to a reviewer.
+
+**Stata-specific**
+`_config.do` redirects add-on installs to package-internal folder.
+Prevents silent version drift at replication time.
+
+---
+
+## Q3: Will LLMs Help Data Editors? {#sec-q3}
+
+### The Andrews & Shapiro Proposal (ES, Jan 2026)
+
+- ES maintains a cloud VM (basic specs; authors can pay to upgrade)
+- Authors get 7-day access with **full keylogging + security logging of all data transfers**
+- Authors run their own code following their own README
+- **LLM compares terminal log + transfer log to README** → flags undocumented steps
+- **LLM suggests README improvements** → passed *unedited* to authors
+- ES staff review for policy violations (copying output files to fake success → visible in transfer log)
+
+::: {.fragment}
+**Right framing:** LLM augments editor on tedious log-diffing; human retains integrity judgment.
+Burden of execution shifts to authors.
+:::
+
+---
+
+## Implementability Concerns
+
+### Andrews-Shapiro is a great idea with real constraints
+
+- A journal-maintained VM cannot contain all software authors use
+- CASD (France) does this: several million euros/year, dedicated software engineer
+- Not a journal-level operation at most institutions
+
+**SIVACOR** (Vilhuber/Cornell/NCSA/UIUC, NSF-funded) is the working compromise:
+- Author submits ZIP + selects curated Docker image
+- Automated execution → Trusted Research Object (TRO) with cryptographic signature + trusted timestamp
+- Editor verifies TRO without re-running
+- Supports R, Stata, MATLAB on curated images
+- **Limited scope by design** — that's what makes it work
+
+---
+
+## The Integrity Gap {#sec-integrity}
+
+### What neither proposal solves
+
+Keylogging catches **file manipulation**.
+
+It does not catch:
+
+::: {.incremental}
+- **Prompt tuning** toward a desired result ("give me scores where positive > 0.6")
+- **Cherry-picking** across stochastic runs (run 20 times, keep the best)
+- **Outright fabrication** (skip the LLM, write the CSV yourself)
+:::
+
+::: {.fragment}
+Prompt + model does not uniquely determine output.
+Both proposals were designed for conventional code packages.
+The LLM-as-data-generator case is an **open problem for editors.**
+:::
+
+---
+
+## The Honest Bottom Line
+
+### What we can and cannot verify
+
+With a human RA: write code, read it, run it, diff outputs. Accountability chain intact.
+
+With an LLM pipeline: author holds prompt, API key, output. Editor sees only output.
+
+::: {.fragment}
+**We can verify *that* a pipeline was applied.**
+
+**We cannot verify *how honestly* it was applied.**
+
+This is a real gap. Disclosure norms help at the margin.
+The deeper fix is open weights + full logging — neither mandatable today.
+:::
+
+---
+
+## What We Can Ask For
+
+### Minimum disclosure standard for LLM pipelines
+
+1. Full prompt *(mandatory)*
+2. Raw output exactly as received *(mandatory)*
+3. Model name · version · temperature · sampling parameters *(mandatory)*
+4. Open-weight model → archived weights or stable link *(strongly preferred)*
+5. Closed API → state limitation explicitly in paper
+6. Use **Template README** standard — extend to LLM pipelines
+7. Execution logs capturing function calls, parameters, outputs
+
+::: {.fragment}
+**Treat LLM output as raw data. Archive it with a DOI.**
+Describe the model as you would any instrument.
+:::
+
+---
+
+## Handling Stochastic Variability
+
+### When "close enough" needs to be operationalized
+
+**Vilhuber's recommendation:**
+- Run queries **10+ times**
+- Capture the output distribution
+- Apply **multiple imputation (Rubin/Reiter rules)**
+- Report LLM-induced variance separately from sampling variance
+
+This is the right standard for results hinging on LLM classification or scoring.
+
+::: {.fragment}
+*"Hopefully quite close" is not a reproducibility standard.*
+:::
+
+---
+
+## Is LLM Software or Data?
+
+### Depends on the layer
+
+| Layer | Software or data? | Archive? |
+|-------|------------------|----------|
+| Pre-trained weights | Software (trained on data) | Yes if open-weight |
+| Fine-tuned weights | Software + embedded data | Yes, with privacy caveats |
+| **LLM output (your results)** | **Data** | **Always — this is your raw data** |
+
+For most economists: the LLM output is data.
+Archive with DOI. Describe the model as you would any instrument.
+
+---
+
+## Summary {#sec-summary}
+
+### Where we are
+
+| Question | Answer |
+|----------|--------|
+| LLMs solve reproducibility? | No — shift *where* the leverage is |
+| Help authors? | Yes — Case 2 automation is real (DeadReckoning) |
+| Help editors? | Yes — log-diffing, README checking (SIVACOR, A&S) |
+| LLM-as-data? | Same principle · harder enforcement · new integrity surface |
+| Open problem? | Integrity gap for LLM pipelines — no tool closes it yet |
+
+::: {.fragment}
+**Same rules. Harder to enforce. New gaps we don't yet have tools to close.**
+:::

@@ -1,0 +1,5 @@
+AI-reproducibility_files/*
+*.pdf
+/.quarto/
+/_site/
+**/*.quarto_ipynb
