@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "AI-Reproducibility.html#sec-questions",
+    "href": "AI-Reproducibility.html#sec-questions",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Agenda",
+    "text": "Agenda\nThree Questions\n\n\nWill LLMs solve our reproducibility troubles?\nWill LLMs help authors prepare replication packages?\nWill LLMs help data editors check replication packages?"
+  },
+  {
+    "objectID": "AI-Reproducibility.html#what-is-an-llm-and-why-does-it-matter-here",
+    "href": "AI-Reproducibility.html#what-is-an-llm-and-why-does-it-matter-here",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "What Is an LLM — and Why Does It Matter Here?",
+    "text": "What Is an LLM — and Why Does It Matter Here?\n\n\n\n\n\n\n\nHey, Claude: What is an LLM?\n\n\nA large language model (LLM) is an AI system trained on vast amounts of data to predict and generate language.\n\n\n\n\n\n\n\n\n#\n\n\nLLM/Deep Learning Use\n\n\nReproducibility problem?\n\n\n\n\n\n\n1\n\n\nStatistical learning (deep nets, nonparametric ’metrics)\n\n\nNo new problem\n\n\n\n\n2\n\n\nCode assistant (LLM writes your code)\n\n\nNo — output is conventional code\n\n\n\n\n3\n\n\nLLM in data pipeline (scores, classifies, generates data)\n\n\nYes — LLM output enters the data chain"
+  },
+  {
+    "objectID": "AI-Reproducibility.html#sec-q1",
+    "href": "AI-Reproducibility.html#sec-q1",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Q1: Will LLMs Solve Reproducibility?",
+    "text": "Q1: Will LLMs Solve Reproducibility?\nThe dream vs. reality\n\n\n\n\n\n\n\n\nDream: Supply a replication package URL, get a coffee, agent reports back.\n\n\nReality: Depends on the package. Three cases.\n\n\n\n\n\n\n\n\n\nDifferrent Use Case!\n\n\nOurs is a different use case from Elliott’s!\n\nTheir paper\nTheir code"
+  },
+  {
+    "objectID": "AI-Reproducibility.html#sec-q1-cases",
+    "href": "AI-Reproducibility.html#sec-q1-cases",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Q1 (cont.): Which Package?",
+    "text": "Q1 (cont.): Which Package?\nWhere does an agent actually help?\n\nComplete (containerized?) package Agent can run it. But so can a shell script.\nPackage has gaps (missing deps, broken paths, bad README) Agent infers, fixes, iterates. Hours (Weeks?) → minutes. This is where agents can help.\nRequires software/data/hardware you don’t have. Agent is irrelevant. No LLM fixes a missing GAUSS license or provides the required GPU.\n\n\n→ The right question is not “will LLMs solve reproducibility?” → It’s “where in the workflow does an LLM/agent provide most leverage?”"
+  },
+  {
+    "objectID": "AI-Reproducibility.html#sec-q2",
+    "href": "AI-Reproducibility.html#sec-q2",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Q2: Will LLMs Help Authors?",
+    "text": "Q2: Will LLMs Help Authors?\n\n\n\n\n\n\nProject starts in 2019\nCond. Accepted in 2025\n🤔 - package does not work.\nPanic."
+  },
+  {
+    "objectID": "AI-Reproducibility.html#q2-will-llms-help-authors",
+    "href": "AI-Reproducibility.html#q2-will-llms-help-authors",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Q2: Will LLMs Help Authors?",
+    "text": "Q2: Will LLMs Help Authors?"
+  },
+  {
+    "objectID": "AI-Reproducibility.html#q2-will-llms-help-authors-1",
+    "href": "AI-Reproducibility.html#q2-will-llms-help-authors-1",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Q2: Will LLMs Help Authors?",
+    "text": "Q2: Will LLMs Help Authors?\nDeadReckoning (proposed / in development)\nhttps://github.com/floswald/DeadReckoning\nPhase 1 — Understand Detect languages · scan live environment · trace every exhibit in latex source back to a script\nPhase 2 — Repair Iterative build-test-fix loop on author’s machine · handles R, Stata, Julia, Python, MATLAB. Docker containerization is the last step — fix natively first\n\nKey: No lockfile ≠ information is gone Reconstructs history from file timestamps, code parsing, installed packages"
+  },
+  {
+    "objectID": "AI-Reproducibility.html#sec-q3",
+    "href": "AI-Reproducibility.html#sec-q3",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Q3: Will LLMs Help Data Editors?",
+    "text": "Q3: Will LLMs Help Data Editors?\nSomething like DeadReckoning works also for Data Editors. Builds full data map and finds gaps. Helpful first pass for Replicators.\n\nBig(ger?) issue: Computational Environment\nAndrews & Shapiro (ES, Jan 2026) VM + keylogging · LLM diffs terminal log vs README · flags undocumented steps. That machine needs to be able to run all the jobs.\nSIVACOR (Vilhuber/Cornell, running for AEA) Author submits ZIP → curated Docker image → automated execution → signed TRO Editor verifies without re-running\nNuvolos Cloud based computing environment with snapshotting and BYOL"
+  },
+  {
+    "objectID": "AI-Reproducibility.html#sec-integrity",
+    "href": "AI-Reproducibility.html#sec-integrity",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "The Integrity Gap",
+    "text": "The Integrity Gap\nWith conventional code: read it, run it, diff outputs. Accountability intact.\nWith an LLM pipeline, we cannot detect:\n\nPrompt tuning toward a desired result\nCherry-picking across stochastic runs (run 20 times, keep the best)\nOutright output fabrication\n\n\nWe can verify that a pipeline was applied. We cannot verify how honestly it was applied."
+  },
+  {
+    "objectID": "AI-Reproducibility.html#what-we-can-ask-for",
+    "href": "AI-Reproducibility.html#what-we-can-ask-for",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "What We Can Ask For",
+    "text": "What We Can Ask For\nMinimum disclosure standard for LLM pipelines\n\nFull prompt (mandatory)\nRaw output exactly as received (mandatory)\nModel name · version · temperature · sampling parameters (mandatory)\nOpen-weight model → archived weights or stable link\nClosed API → state limitation explicitly in paper\n\n\nTreat LLM output as raw data. Archive it with a DOI. Describe the model as you would any instrument."
+  },
+  {
+    "objectID": "AI-Reproducibility.html#sec-summary",
+    "href": "AI-Reproducibility.html#sec-summary",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Summary",
+    "text": "Summary\nThe honest position\n\n\n\n\n\n\n\nQuestion\nAnswer\n\n\n\n\nLLMs solve reproducibility?\nNo — but they shift where the leverage is\n\n\nHelp authors?\nYes — Case 2 automation is real (DeadReckoning)\n\n\nHelp editors?\nYes — log-diffing, README checking (SIVACOR, A&S)\n\n\nLLM-as-data?\nSame principle · harder enforcement · new integrity surface\n\n\n\n\nSame rules. Harder to enforce. New gaps we don’t yet have tools to close."
+  },
+  {
+    "objectID": "AI-Reproducibility.html#backup-slides",
+    "href": "AI-Reproducibility.html#backup-slides",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Backup Slides",
+    "text": "Backup Slides"
+  },
+  {
+    "objectID": "AI-Reproducibility.html#the-coordination-temptation",
+    "href": "AI-Reproducibility.html#the-coordination-temptation",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "The Coordination Temptation",
+    "text": "The Coordination Temptation\n“If everyone used Python/R/Julia…”\nRight: provisionability improves. Mandate the outcome (must run in clean container), not the tool. Already what SIVACOR does.\nWrong: open-source ≠ reproducible. - Only 31% of econ packages have a controller script — not a language problem - Dependency rot, unset seeds, FP nondeterminism survive any language mandate - Stata scores Yes/Yes/Yes on reproducibility-in-principle — more reproducible than a closed LLM API\nCan’t legally redistribute Stata in a public Docker image anyway. Containerization moves the licensing problem; doesn’t dissolve it."
+  },
+  {
+    "objectID": "AI-Reproducibility.html#same-principle-new-problem",
+    "href": "AI-Reproducibility.html#same-principle-new-problem",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Same Principle, New Problem",
+    "text": "Same Principle, New Problem\nThe break is on row 3\n\n\n\n\n\n\n\n\n\nTool\nDeterministic?\nArchivable?\nRe-runnable?\n\n\n\n\nGAUSS / Stata / R\nYes\nYes\nYes\n\n\nOpen-weight LLM (Llama, Mistral)\nYes (seed+temp)\nYes (weights)\nYes, with effort\n\n\nClosed API (GPT-4, Claude)\nNo\nNo\nNo guarantee\n\n\n\ngpt-4o today ≠ gpt-4o six months ago. Model-name-plus-version is insufficient."
+  },
+  {
+    "objectID": "AI-Reproducibility.html#three-layer-archive-taxonomy",
+    "href": "AI-Reproducibility.html#three-layer-archive-taxonomy",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Three-Layer Archive Taxonomy",
+    "text": "Three-Layer Archive Taxonomy\n\n\n\n\n\n\n\n\nLayer\nWhat it is\nArchive strategy\n\n\n\n\nPre-trained LLM\nBase model weights\nHuggingFace if open; name+date if closed\n\n\nFine-tuned LLM\nYour weights\nPrivacy constraints may apply\n\n\nAnalysis output\nWhat the LLM returned\nAlways — DOI in replication package\n\n\n\nMost economists use layer 3. Hardest to reproduce. Easiest to archive."
+  },
+  {
+    "objectID": "AI-Reproducibility.html#handling-stochastic-variability",
+    "href": "AI-Reproducibility.html#handling-stochastic-variability",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Handling Stochastic Variability",
+    "text": "Handling Stochastic Variability\nVilhuber’s recommendation\nRun queries 10+ times · capture output distribution Apply multiple imputation (Rubin/Reiter rules) Report LLM-induced variance separately from sampling variance\nRight standard for results hinging on LLM classification or scoring.\n“Hopefully quite close” is not a reproducibility standard."
+  }
+]
