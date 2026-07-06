@@ -18,7 +18,7 @@
     "href": "AI-Reproducibility.html#sec-q1",
     "title": "Reproducibility in the Age of LLMs",
     "section": "Q1: Will LLMs Solve Reproducibility?",
-    "text": "Q1: Will LLMs Solve Reproducibility?\nThe dream vs. reality\n\n\n\n\n\n\n\n\nDream: Supply a replication package URL, get a coffee, agent reports back.\n\n\nReality: Depends on the package. Three cases.\n\n\n\n\n\n\n\n\n\nDifferrent Use Case!\n\n\nOurs is a different use case from Elliott’s!\n\nTheir paper\nTheir code"
+    "text": "Q1: Will LLMs Solve Reproducibility?\nThe dream vs. reality\n\n\n\n\n\n\n\n\nDream: Supply a replication package URL, get a coffee, agent reports back.\n\n\nReality: Depends on the package. Three cases.\n\n\n\n\n\n\n\n\n\nDifferent Use Case!\n\n\nOurs is a different use case from Elliott’s!\n\nTheir paper\nTheir code"
   },
   {
     "objectID": "AI-Reproducibility.html#sec-q1-cases",
@@ -102,7 +102,7 @@
     "href": "AI-Reproducibility.html#sec-summary",
     "title": "Reproducibility in the Age of LLMs",
     "section": "Summary",
-    "text": "Summary\nThe honest position\n\n\n\n\n\n\n\nQuestion\nAnswer\n\n\n\n\nLLMs solve reproducibility?\nNo — but they shift where the leverage is\n\n\nHelp authors?\nYes — Case 2 automation is real (DeadReckoning)\n\n\nHelp editors?\nYes — log-diffing, README checking (SIVACOR, A&S)\n\n\nLLM-as-data?\nSame principle · harder enforcement · new integrity surface\n\n\n\n\nSame rules. Harder to enforce. New gaps we don’t yet have tools to close."
+    "text": "Summary\n\n\n\n\n\n\n\nQuestion\nAnswer\n\n\n\n\nLLMs solve reproducibility?\nNo — but they shift where the leverage is\n\n\nHelp authors?\nYes — Case 2 automation is real (DeadReckoning)\n\n\nHelp editors?\nYes — log-diffing, README checking (SIVACOR, A&S)\n\n\nLLM-as-data?\nSame principle · harder enforcement"
   },
   {
     "objectID": "AI-Reproducibility.html#backup-slides",
