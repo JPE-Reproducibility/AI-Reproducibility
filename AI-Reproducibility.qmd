@@ -206,6 +206,83 @@ Iterative build-test-fix loop on author's machine · handles R, Stata, Julia, Py
 Reconstructs history from file timestamps, code parsing, installed packages
 :::
 
+
+## `DeadReckoning` Demo
+
+<br>
+
+::: {.columns}
+::: {.column}
+
+### Conditionally Accepted Paper
+
+![](img/toy-paper.png)
+
+:::
+
+::: {.column}
+
+
+### Replication Package
+
+
+```
+.
+├── code
+│   └── analysis.do
+├── data
+│   ├── region_boost.csv
+│   └── survey.csv
+├── paper.pdf
+├── paper.tex
+├── README.md
+└── tables
+    └── table1.tex
+
+
+```
+
+
+:::
+
+:::
+
+
+## `DeadReckoning` Demo
+
+<br>
+
+### Package `README`
+
+```
+# Replication package: Wages and Schooling (toy example)
+
+## Data
+- `data/survey.csv` — synthetic survey of wages, schooling, and age (n=200)
+
+## Code
+- `code/analysis.do` — runs the regression, produces `tables/table1.tex`
+
+## Requirements
+- R (tidyverse)
+
+## To reproduce
+Run `code/analysis.do` from the project root.
+```
+
+## `DeadReckoning` Demo
+
+```{=html}
+<script src="https://asciinema.org/a/QVxTfbEoU81mUeYX.js" id="asciicast-QVxTfbEoU81mUeYX" async="true"></script>
+```
+
+## `DeadReckoning` Demo
+
+```{=html}
+<script src="https://asciinema.org/a/Nd2Nau0n6DZ53SeH.js" id="asciicast-Nd2Nau0n6DZ53SeH" async="true"></script>
+```
+
+
 ---
 
 ## Q3: Will LLMs Help Data Editors? {#sec-q3}
