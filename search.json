@@ -49,6 +49,34 @@
     "text": "Q2: Will LLMs Help Authors?\nDeadReckoning (proposed / in development)\nhttps://github.com/floswald/DeadReckoning\nPhase 1 — Understand Detect languages · scan live environment · trace every exhibit in latex source back to a script\nPhase 2 — Repair Iterative build-test-fix loop on author’s machine · handles R, Stata, Julia, Python, MATLAB. Docker containerization is the last step — fix natively first\n\nKey: No lockfile ≠ information is gone Reconstructs history from file timestamps, code parsing, installed packages"
   },
   {
+    "objectID": "AI-Reproducibility.html#deadreckoning-demo",
+    "href": "AI-Reproducibility.html#deadreckoning-demo",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "DeadReckoning Demo",
+    "text": "DeadReckoning Demo\n\n\n\nConditionally Accepted Paper\n\n\nReplication Package\n.\n├── code\n│   └── analysis.do\n├── data\n│   ├── region_boost.csv\n│   └── survey.csv\n├── paper.pdf\n├── paper.tex\n├── README.md\n└── tables\n    └── table1.tex"
+  },
+  {
+    "objectID": "AI-Reproducibility.html#deadreckoning-demo-1",
+    "href": "AI-Reproducibility.html#deadreckoning-demo-1",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "DeadReckoning Demo",
+    "text": "DeadReckoning Demo\n\nPackage README\n# Replication package: Wages and Schooling (toy example)\n\n## Data\n- `data/survey.csv` — synthetic survey of wages, schooling, and age (n=200)\n\n## Code\n- `code/analysis.do` — runs the regression, produces `tables/table1.tex`\n\n## Requirements\n- R (tidyverse)\n\n## To reproduce\nRun `code/analysis.do` from the project root."
+  },
+  {
+    "objectID": "AI-Reproducibility.html#deadreckoning-demo-2",
+    "href": "AI-Reproducibility.html#deadreckoning-demo-2",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "DeadReckoning Demo",
+    "text": "DeadReckoning Demo"
+  },
+  {
+    "objectID": "AI-Reproducibility.html#deadreckoning-demo-3",
+    "href": "AI-Reproducibility.html#deadreckoning-demo-3",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "DeadReckoning Demo",
+    "text": "DeadReckoning Demo"
+  },
+  {
     "objectID": "AI-Reproducibility.html#sec-q3",
     "href": "AI-Reproducibility.html#sec-q3",
     "title": "Reproducibility in the Age of LLMs",

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Florian Oswald">
-  <meta name="dcterms.date" content="2026-07-05">
+  <meta name="dcterms.date" content="2026-07-06">
   <title>Reproducibility in the Age of LLMs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -151,7 +151,7 @@ Florian Oswald <a href="https://orcid.org/0000-0001-7737-2038" class="quarto-tit
     </div>
 </div>
 
-  <p class="date">July 5, 2026</p>
+  <p class="date">July 6, 2026</p>
 </section>
 <section id="sec-questions" class="slide level2">
 <h2>Agenda</h2>
@@ -310,6 +310,56 @@ No — output is conventional code
 <div class="fragment">
 <p><strong>Key:</strong> <code>No lockfile ≠ information is gone</code> Reconstructs history from file timestamps, code parsing, installed packages</p>
 </div>
+</section>
+<section id="deadreckoning-demo" class="slide level2">
+<h2><code>DeadReckoning</code> Demo</h2>
+<p><br></p>
+<div class="columns">
+<div class="column">
+<h3 id="conditionally-accepted-paper">Conditionally Accepted Paper</h3>
+<p><img data-src="img/toy-paper.png"></p>
+</div><div class="column">
+<h3 id="replication-package">Replication Package</h3>
+<pre><code>.
+├── code
+│   └── analysis.do
+├── data
+│   ├── region_boost.csv
+│   └── survey.csv
+├── paper.pdf
+├── paper.tex
+├── README.md
+└── tables
+    └── table1.tex
+
+</code></pre>
+</div></div>
+</section>
+<section id="deadreckoning-demo-1" class="slide level2">
+<h2><code>DeadReckoning</code> Demo</h2>
+<p><br></p>
+<h3 id="package-readme">Package <code>README</code></h3>
+<pre><code># Replication package: Wages and Schooling (toy example)
+
+## Data
+- `data/survey.csv` — synthetic survey of wages, schooling, and age (n=200)
+
+## Code
+- `code/analysis.do` — runs the regression, produces `tables/table1.tex`
+
+## Requirements
+- R (tidyverse)
+
+## To reproduce
+Run `code/analysis.do` from the project root.</code></pre>
+</section>
+<section id="deadreckoning-demo-2" class="slide level2">
+<h2><code>DeadReckoning</code> Demo</h2>
+<script src="https://asciinema.org/a/QVxTfbEoU81mUeYX.js" id="asciicast-QVxTfbEoU81mUeYX" async="true"></script>
+</section>
+<section id="deadreckoning-demo-3" class="slide level2">
+<h2><code>DeadReckoning</code> Demo</h2>
+<script src="https://asciinema.org/a/Nd2Nau0n6DZ53SeH.js" id="asciicast-Nd2Nau0n6DZ53SeH" async="true"></script>
 </section>
 <section id="sec-q3" class="slide level2">
 <h2>Q3: Will LLMs Help Data Editors?</h2>
