@@ -338,7 +338,7 @@ Editor verifies without re-running
 
 ---
 
-## The Integrity Gap {#sec-integrity}
+## Back to LLMs: The Integrity Gap {#sec-integrity}
 
 With conventional code: read it, run it, diff outputs. Accountability intact.
 
@@ -377,7 +377,7 @@ Describe the model as you would any instrument.
 
 | Question | Answer |
 |----------|--------|
-| LLMs solve reproducibility? | No — but they shift *where* the leverage is |
+| LLMs solve reproducibility? | No — Computational Env 1st order|
 | Help authors? | Yes — Case 2 automation is real (DeadReckoning) |
 | Help editors? | Yes — log-diffing, README checking (SIVACOR, A&S) |
 | LLM-as-data? | Same principle · harder enforcement|
