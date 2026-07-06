@@ -2,3 +2,10 @@ project:
     type: website
     render:
       - AI-Reproducibility.qmd
+    resources:
+      - offline-assets/**
+
+profile:
+    default: online
+    group:
+      - [online, offline]

@@ -76,8 +76,14 @@ A large language _model_ (LLM) is an AI system trained on vast amounts of _data_
 ::: {.column}
 
 
+::: {.content-hidden when-profile="offline"}
 <blockquote class="twitter-tweet"><a href="https://twitter.com/ellliottt/status/2047667528579596347"></a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+:::
+
+::: {.content-visible when-profile="offline"}
+![](img/twitter.png)
+:::
 
 
 :::
@@ -104,7 +110,7 @@ A large language _model_ (LLM) is an AI system trained on vast amounts of _data_
 
 ::: {.callout-tip}
 
-# Differrent Use Case!
+# Different Use Case!
 
 Ours is a different use case from Elliott's!
 
@@ -272,15 +278,39 @@ Run `code/analysis.do` from the project root.
 
 ## `DeadReckoning` Demo
 
+::: {.content-hidden when-profile="offline"}
 ```{=html}
 <script src="https://asciinema.org/a/QVxTfbEoU81mUeYX.js" id="asciicast-QVxTfbEoU81mUeYX" async="true"></script>
 ```
+:::
+
+::: {.content-visible when-profile="offline"}
+```{=html}
+<link rel="stylesheet" href="offline-assets/asciinema-player/asciinema-player.css">
+<div id="cast-1"></div>
+<script src="offline-assets/asciinema-player/asciinema-player.min.js"></script>
+<script src="offline-assets/casts/cast1.js"></script>
+<script>AsciinemaPlayer.create(window.CAST1_DATA_URL, document.getElementById('cast-1'));</script>
+```
+:::
 
 ## `DeadReckoning` Demo
 
+::: {.content-hidden when-profile="offline"}
 ```{=html}
 <script src="https://asciinema.org/a/Nd2Nau0n6DZ53SeH.js" id="asciicast-Nd2Nau0n6DZ53SeH" async="true"></script>
 ```
+:::
+
+::: {.content-visible when-profile="offline"}
+```{=html}
+<link rel="stylesheet" href="offline-assets/asciinema-player/asciinema-player.css">
+<div id="cast-2"></div>
+<script src="offline-assets/asciinema-player/asciinema-player.min.js"></script>
+<script src="offline-assets/casts/cast2.js"></script>
+<script>AsciinemaPlayer.create(window.CAST2_DATA_URL, document.getElementById('cast-2'));</script>
+```
+:::
 
 
 ---
@@ -298,7 +328,7 @@ Something like **DeadReckoning** works also for Data Editors. Builds full data m
 VM + keylogging · LLM diffs terminal log vs README · flags undocumented steps.
 That machine needs to be able to run _all the jobs_.
 
-**SIVACOR** *(Vilhuber/Cornell, running for AEA)*
+[**SIVACOR**](https://docs.sivacor.org) *(Vilhuber/Cornell, running for AEA)*
 Author submits ZIP → curated Docker image → automated execution → signed TRO
 Editor verifies without re-running
 
@@ -344,18 +374,14 @@ Describe the model as you would any instrument.
 
 ## Summary {#sec-summary}
 
-### The honest position
 
 | Question | Answer |
 |----------|--------|
 | LLMs solve reproducibility? | No — but they shift *where* the leverage is |
 | Help authors? | Yes — Case 2 automation is real (DeadReckoning) |
 | Help editors? | Yes — log-diffing, README checking (SIVACOR, A&S) |
-| LLM-as-data? | Same principle · harder enforcement · new integrity surface |
+| LLM-as-data? | Same principle · harder enforcement|
 
-::: {.fragment}
-**Same rules. Harder to enforce. New gaps we don't yet have tools to close.**
-:::
 
 ---
 
