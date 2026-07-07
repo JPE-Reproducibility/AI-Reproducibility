@@ -4,14 +4,7 @@
     "href": "AI-Reproducibility.html#sec-questions",
     "title": "Reproducibility in the Age of LLMs",
     "section": "Agenda",
-    "text": "Agenda\nThree Questions\n\n\nWill LLMs solve our reproducibility troubles?\nWill LLMs help authors prepare replication packages?\nWill LLMs help data editors check replication packages?"
-  },
-  {
-    "objectID": "AI-Reproducibility.html#what-is-an-llm-and-why-does-it-matter-here",
-    "href": "AI-Reproducibility.html#what-is-an-llm-and-why-does-it-matter-here",
-    "title": "Reproducibility in the Age of LLMs",
-    "section": "What Is an LLM — and Why Does It Matter Here?",
-    "text": "What Is an LLM — and Why Does It Matter Here?\n\n\n\n\n\n\n\nHey, Claude: What is an LLM?\n\n\nA large language model (LLM) is an AI system trained on vast amounts of data to predict and generate language.\n\n\n\n\n\n\n\n\n#\n\n\nLLM/Deep Learning Use\n\n\nReproducibility problem?\n\n\n\n\n\n\n1\n\n\nStatistical learning (deep nets, nonparametric ’metrics)\n\n\nNo new problem\n\n\n\n\n2\n\n\nCode assistant (LLM writes your code)\n\n\nNo — output is conventional code\n\n\n\n\n3\n\n\nLLM in data pipeline (scores, classifies, generates data)\n\n\nYes — LLM output enters the data chain"
+    "text": "Agenda\n\n\nWill LLMs solve our reproducibility troubles?\nWill LLMs help authors prepare replication packages?\nWill LLMs help data editors check replication packages?\nGeneral Guidance when using LLMs in your work."
   },
   {
     "objectID": "AI-Reproducibility.html#sec-q1",
@@ -31,22 +24,22 @@
     "objectID": "AI-Reproducibility.html#sec-q2",
     "href": "AI-Reproducibility.html#sec-q2",
     "title": "Reproducibility in the Age of LLMs",
-    "section": "Q2: Will LLMs Help Authors?",
-    "text": "Q2: Will LLMs Help Authors?\n\n\n\n\n\n\nProject starts in 2019\nCond. Accepted in 2025\n🤔 - package does not work.\nPanic."
+    "section": "Q2: Will LLMs Help Authors with Packages?",
+    "text": "Q2: Will LLMs Help Authors with Packages?\n\n\n\n\n\n\nProject starts in 2019\nCond. Accepted in 2025\n🤔 - package does not work.\nPanic."
   },
   {
-    "objectID": "AI-Reproducibility.html#q2-will-llms-help-authors",
-    "href": "AI-Reproducibility.html#q2-will-llms-help-authors",
+    "objectID": "AI-Reproducibility.html#q2-will-llms-help-authors-with-packages",
+    "href": "AI-Reproducibility.html#q2-will-llms-help-authors-with-packages",
     "title": "Reproducibility in the Age of LLMs",
-    "section": "Q2: Will LLMs Help Authors?",
-    "text": "Q2: Will LLMs Help Authors?"
+    "section": "Q2: Will LLMs Help Authors with Packages?",
+    "text": "Q2: Will LLMs Help Authors with Packages?"
   },
   {
-    "objectID": "AI-Reproducibility.html#q2-will-llms-help-authors-1",
-    "href": "AI-Reproducibility.html#q2-will-llms-help-authors-1",
+    "objectID": "AI-Reproducibility.html#q2-will-llms-help-authors-with-packages-1",
+    "href": "AI-Reproducibility.html#q2-will-llms-help-authors-with-packages-1",
     "title": "Reproducibility in the Age of LLMs",
-    "section": "Q2: Will LLMs Help Authors?",
-    "text": "Q2: Will LLMs Help Authors?\nDeadReckoning (proposed / in development)\nhttps://github.com/floswald/DeadReckoning\nPhase 1 — Understand Detect languages · scan live environment · trace every exhibit in latex source back to a script\nPhase 2 — Repair Iterative build-test-fix loop on author’s machine · handles R, Stata, Julia, Python, MATLAB. Docker containerization is the last step — fix natively first\n\nKey: No lockfile ≠ information is gone Reconstructs history from file timestamps, code parsing, installed packages"
+    "section": "Q2: Will LLMs Help Authors with Packages?",
+    "text": "Q2: Will LLMs Help Authors with Packages?\nDeadReckoning (proposed / in development)\nhttps://github.com/floswald/DeadReckoning\nPhase 1 — Understand Detect languages · scan live environment · trace every exhibit in latex source back to a script\nPhase 2 — Repair Iterative build-test-fix loop on author’s machine · handles R, Stata, Julia, Python, MATLAB. Docker containerization is the last step — fix natively first\n\nKey: No lockfile ≠ information is gone Reconstructs history from file timestamps, code parsing, installed packages"
   },
   {
     "objectID": "AI-Reproducibility.html#deadreckoning-demo",
@@ -81,14 +74,28 @@
     "href": "AI-Reproducibility.html#sec-q3",
     "title": "Reproducibility in the Age of LLMs",
     "section": "Q3: Will LLMs Help Data Editors?",
-    "text": "Q3: Will LLMs Help Data Editors?\nSomething like DeadReckoning works also for Data Editors. Builds full data map and finds gaps. Helpful first pass for Replicators.\n\nBig(ger?) issue: Computational Environment\nAndrews & Shapiro (ES, Jan 2026) VM + keylogging · LLM diffs terminal log vs README · flags undocumented steps. That machine needs to be able to run all the jobs.\nSIVACOR (Vilhuber/Cornell, running for AEA) Author submits ZIP → curated Docker image → automated execution → signed TRO Editor verifies without re-running\nNuvolos Cloud based computing environment with snapshotting and BYOL"
+    "text": "Q3: Will LLMs Help Data Editors?\nSomething like DeadReckoning works also for Data Editors. Builds full data map and finds gaps. Helpful first pass for Replicators.\n\n\nBig(ger?) issue: Computational Environment\n\n\nDocker is great, but not widely known. (DeadReckoning wants to help.) Also, no silver bullet either.\nSIVACOR (Vilhuber/Cornell, running for AEA) Author submits ZIP → curated Docker image → automated execution → signed TRO Editor verifies without re-running\nNuvolos Cloud based computing environment with snapshotting and BYOL"
+  },
+  {
+    "objectID": "AI-Reproducibility.html#q4-general-guidance",
+    "href": "AI-Reproducibility.html#q4-general-guidance",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "Q4: General Guidance",
+    "text": "Q4: General Guidance\nSo, what’s the actual problem with LLMs when used in my data pipeline?\n\nWell, let’s find out."
+  },
+  {
+    "objectID": "AI-Reproducibility.html#section",
+    "href": "AI-Reproducibility.html#section",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "",
+    "text": "John Maynard Keynes lived …\n\n\n\nWhat’s the next word?\n\n\nLet’s ask Llama-3.2-1B."
   },
   {
     "objectID": "AI-Reproducibility.html#sec-integrity",
     "href": "AI-Reproducibility.html#sec-integrity",
     "title": "Reproducibility in the Age of LLMs",
-    "section": "Back to LLMs: The Integrity Gap",
-    "text": "Back to LLMs: The Integrity Gap\nWith conventional code: read it, run it, diff outputs. Accountability intact.\nWith an LLM pipeline, we cannot detect:\n\nPrompt tuning toward a desired result\nCherry-picking across stochastic runs (run 20 times, keep the best)\nOutright output fabrication\n\n\nWe can verify that a pipeline was applied. We cannot verify how honestly it was applied."
+    "section": "The Integrity Gap",
+    "text": "The Integrity Gap\nWith conventional code: read it, run it, diff outputs. Accountability intact.\nWith an LLM pipeline, we cannot detect:\n\nPrompt tuning toward a desired result\nCherry-picking across stochastic runs (run 20 times, keep the best)\nOutright output fabrication\n\n\nWe can verify that a pipeline was applied. We cannot verify how honestly it was applied."
   },
   {
     "objectID": "AI-Reproducibility.html#what-we-can-ask-for",

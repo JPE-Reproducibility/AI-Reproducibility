@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Florian Oswald">
-  <meta name="dcterms.date" content="2026-07-06">
+  <meta name="dcterms.date" content="2026-07-07">
   <title>Reproducibility in the Age of LLMs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -151,86 +151,65 @@ Florian Oswald <a href="https://orcid.org/0000-0001-7737-2038" class="quarto-tit
     </div>
 </div>
 
-  <p class="date">July 6, 2026</p>
+  <p class="date">July 7, 2026</p>
 </section>
 <section id="sec-questions" class="slide level2">
 <h2>Agenda</h2>
-<h3 id="three-questions">Three Questions</h3>
 <p><br></p>
 <ol type="1">
 <li class="fragment"><p>Will LLMs solve our reproducibility troubles?</p></li>
 <li class="fragment"><p>Will LLMs help <strong>authors</strong> prepare replication packages?</p></li>
 <li class="fragment"><p>Will LLMs help <strong>data editors</strong> check replication packages?</p></li>
+<li class="fragment"><p><strong>General Guidance</strong> when using LLMs in your work.</p></li>
 </ol>
-</section>
-<section id="what-is-an-llm-and-why-does-it-matter-here" class="slide level2">
-<h2>What Is an LLM — and Why Does It Matter Here?</h2>
-<p><br></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Hey, Claude: What is an LLM?</strong></p>
-</div>
-<div class="callout-content">
-<p>A large language <em>model</em> (LLM) is an AI system trained on vast amounts of <em>data</em> to predict and generate language.</p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<table>
+<!-- ---
+
+## What Is an LLM — and Why Does It Matter Here?
+
+<br>
+
+::: {.callout-note}
+
+# Hey, Claude: What is an LLM?
+
+A large language _model_ (LLM) is an AI system trained on vast amounts of _data_ to predict and generate language.
+:::
+
+
+::: {.fragment}
+
+
+
+<table class="caption-top" data-quarto-postprocess="true">
 <thead>
-<tr>
-<th>
-#
-</th>
-<th>
-LLM/Deep Learning Use
-</th>
-<th>
-Reproducibility problem?
-</th>
+<tr class="header">
+<th data-quarto-table-cell-role="th">#</th>
+<th data-quarto-table-cell-role="th">LLM/Deep Learning Use</th>
+<th data-quarto-table-cell-role="th">Reproducibility problem?</th>
 </tr>
 </thead>
 <tbody>
-<tr class="fragment">
-<td>
-1
-</td>
-<td>
-Statistical learning (deep nets, nonparametric ’metrics)
-</td>
-<td>
-No new problem
-</td>
+<tr class="fragment odd">
+<td>1</td>
+<td>Statistical learning (deep nets, nonparametric 'metrics)</td>
+<td>No new problem</td>
 </tr>
-<tr class="fragment">
-<td>
-2
-</td>
-<td>
-Code assistant (LLM writes your code)
-</td>
-<td>
-No — output is conventional code
-</td>
+<tr class="fragment even">
+<td>2</td>
+<td>Code assistant (LLM writes your code)</td>
+<td>No — output is conventional code</td>
 </tr>
-<tr class="fragment">
-<td>
-3
-</td>
-<td>
-<strong>LLM in data pipeline (scores, classifies, generates data)</strong>
-</td>
-<td>
-<strong>Yes — LLM output enters the data chain</strong>
-</td>
+<tr class="fragment odd">
+<td>3</td>
+<td><strong>LLM in data pipeline (scores, classifies, generates data)</strong></td>
+<td><strong>Yes — LLM output enters the data chain</strong></td>
 </tr>
 </tbody>
 </table>
-</div>
+
+
+
+::: -->
 </section>
 <section id="sec-q1" class="slide level2">
 <h2>Q1: Will LLMs Solve Reproducibility?</h2>
@@ -283,7 +262,7 @@ No — output is conventional code
 </div>
 </section>
 <section id="sec-q2" class="slide level2">
-<h2>Q2: Will LLMs Help Authors?</h2>
+<h2>Q2: Will LLMs Help Authors with Packages?</h2>
 <div class="columns">
 <div class="column">
 <p><img data-src="./img/dead1.png"></p>
@@ -297,12 +276,12 @@ No — output is conventional code
 </ol>
 </div></div>
 </section>
-<section id="q2-will-llms-help-authors" class="slide level2">
-<h2>Q2: Will LLMs Help Authors?</h2>
+<section id="q2-will-llms-help-authors-with-packages" class="slide level2">
+<h2>Q2: Will LLMs Help Authors with Packages?</h2>
 
 <img data-src="./img/dead.png" class="r-stretch"></section>
-<section id="q2-will-llms-help-authors-1" class="slide level2">
-<h2>Q2: Will LLMs Help Authors?</h2>
+<section id="q2-will-llms-help-authors-with-packages-1" class="slide level2">
+<h2>Q2: Will LLMs Help Authors with Packages?</h2>
 <h3 id="deadreckoning-proposed-in-development">DeadReckoning <em>(proposed / in development)</em></h3>
 <p><a href="https://github.com/floswald/DeadReckoning">https://github.com/floswald/DeadReckoning</a></p>
 <p><strong>Phase 1 — Understand</strong> Detect languages · scan live environment · trace every exhibit in latex source back to a script</p>
@@ -364,15 +343,48 @@ Run `code/analysis.do` from the project root.</code></pre>
 <section id="sec-q3" class="slide level2">
 <h2>Q3: Will LLMs Help Data Editors?</h2>
 <p>Something like <strong>DeadReckoning</strong> works also for Data Editors. Builds full data map and finds gaps. Helpful first pass for Replicators.</p>
+<p><br></p>
 <div class="fragment">
 <h3 id="bigger-issue-computational-environment">Big(ger?) issue: Computational Environment</h3>
-<p><strong>Andrews &amp; Shapiro (ES, Jan 2026)</strong> VM + keylogging · LLM diffs terminal log vs README · flags undocumented steps. That machine needs to be able to run <em>all the jobs</em>.</p>
+</div>
+<div class="fragment">
+<p>Docker is great, but not widely known. (<code>DeadReckoning</code> wants to help.) Also, no silver bullet either.</p>
 <p><a href="https://docs.sivacor.org"><strong>SIVACOR</strong></a> <em>(Vilhuber/Cornell, running for AEA)</em> Author submits ZIP → curated Docker image → automated execution → signed TRO Editor verifies without re-running</p>
 <p><a href="https://nuvolos.com"><strong>Nuvolos</strong></a> Cloud based computing environment with snapshotting and BYOL</p>
 </div>
 </section>
+<section id="q4-general-guidance" class="slide level2">
+<h2>Q4: General Guidance</h2>
+<p>So, what’s the actual problem with LLMs when used in my data pipeline?</p>
+<div class="fragment">
+<p>Well, let’s find out.</p>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="./img/John_Maynard_Keynes_(1929).jpg"></p>
+</div><div class="column">
+<div class="fragment">
+<blockquote>
+<p>John Maynard Keynes lived …</p>
+</blockquote>
+</div>
+<div class="fragment">
+<p>What’s the next word?</p>
+</div>
+<div class="fragment">
+<p>Let’s ask <code>Llama-3.2-1B</code>.</p>
+<p><img data-src="./img/llama.jpg"></p>
+</div>
+</div></div>
+</section>
+<section id="section-1" class="slide level2" data-background-image="img/keynes-llama.png" data-background-size="contain" data-background-position="center">
+<h2></h2>
+</section>
 <section id="sec-integrity" class="slide level2">
-<h2>Back to LLMs: The Integrity Gap</h2>
+<h2>The Integrity Gap</h2>
 <p>With conventional code: read it, run it, diff outputs. Accountability intact.</p>
 <p>With an LLM pipeline, we cannot detect:</p>
 <ul>
