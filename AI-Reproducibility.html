@@ -375,26 +375,36 @@ Run `code/analysis.do` from the project root.</code></pre>
 <p>What’s the next word?</p>
 </div>
 <div class="fragment">
-<p>Let’s ask <code>Llama-3.2-1B</code>.</p>
-<p><img data-src="./img/llama.jpg"></p>
+<p>Let’s ask a Llama. <img data-src="./img/llama.jpg"></p>
 </div>
 </div></div>
 </section>
-<section id="section-1" class="slide level2" data-background-image="img/keynes-llama.png" data-background-size="contain" data-background-position="center">
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="./img/John_Maynard_Keynes_(1929).jpg"></p>
+</div><div class="column">
+<blockquote>
+<p>John Maynard Keynes lived …</p>
+</blockquote>
+<p>What’s the next word?</p>
+<p>Let’s ask a Llama. <code>Llama-3.2-1B</code> <img data-src="./img/llama.jpg"></p>
+</div></div>
+</section>
+<section id="section-2" class="slide level2" data-background-image="img/keynes-llama.png" data-background-size="contain" data-background-position="center">
 <h2></h2>
 </section>
 <section id="sec-integrity" class="slide level2">
 <h2>The Integrity Gap</h2>
 <p>With conventional code: read it, run it, diff outputs. Accountability intact.</p>
+<p>The LLM entering the Data-Generating-Process poses unique challenges.</p>
 <p>With an LLM pipeline, we cannot detect:</p>
 <ul>
 <li>Prompt tuning toward a desired result</li>
 <li>Cherry-picking across stochastic runs <em>(run 20 times, keep the best)</em></li>
 <li>Outright output fabrication</li>
 </ul>
-<div class="fragment">
-<p><strong>We can verify <em>that</em> a pipeline was applied.</strong> <strong>We cannot verify <em>how honestly</em> it was applied.</strong></p>
-</div>
 </section>
 <section id="what-we-can-ask-for" class="slide level2">
 <h2>What We Can Ask For</h2>
@@ -430,11 +440,11 @@ Run `code/analysis.do` from the project root.</code></pre>
 </tr>
 <tr class="odd">
 <td>Help editors?</td>
-<td>Yes — log-diffing, README checking (SIVACOR, A&amp;S)</td>
+<td>Yes — log-diffing, README checking (SIVACOR,…)</td>
 </tr>
 <tr class="even">
 <td>LLM-as-data?</td>
-<td>Same principle · harder enforcement</td>
+<td>Same principles · harder enforcement</td>
 </tr>
 </tbody>
 </table>

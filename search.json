@@ -88,14 +88,21 @@
     "href": "AI-Reproducibility.html#section",
     "title": "Reproducibility in the Age of LLMs",
     "section": "",
-    "text": "John Maynard Keynes lived …\n\n\n\nWhat’s the next word?\n\n\nLet’s ask Llama-3.2-1B."
+    "text": "John Maynard Keynes lived …\n\n\n\nWhat’s the next word?\n\n\nLet’s ask a Llama."
+  },
+  {
+    "objectID": "AI-Reproducibility.html#section-1",
+    "href": "AI-Reproducibility.html#section-1",
+    "title": "Reproducibility in the Age of LLMs",
+    "section": "",
+    "text": "John Maynard Keynes lived …\n\nWhat’s the next word?\nLet’s ask a Llama. Llama-3.2-1B"
   },
   {
     "objectID": "AI-Reproducibility.html#sec-integrity",
     "href": "AI-Reproducibility.html#sec-integrity",
     "title": "Reproducibility in the Age of LLMs",
     "section": "The Integrity Gap",
-    "text": "The Integrity Gap\nWith conventional code: read it, run it, diff outputs. Accountability intact.\nWith an LLM pipeline, we cannot detect:\n\nPrompt tuning toward a desired result\nCherry-picking across stochastic runs (run 20 times, keep the best)\nOutright output fabrication\n\n\nWe can verify that a pipeline was applied. We cannot verify how honestly it was applied."
+    "text": "The Integrity Gap\nWith conventional code: read it, run it, diff outputs. Accountability intact.\nThe LLM entering the Data-Generating-Process poses unique challenges.\nWith an LLM pipeline, we cannot detect:\n\nPrompt tuning toward a desired result\nCherry-picking across stochastic runs (run 20 times, keep the best)\nOutright output fabrication"
   },
   {
     "objectID": "AI-Reproducibility.html#what-we-can-ask-for",
@@ -109,7 +116,7 @@
     "href": "AI-Reproducibility.html#sec-summary",
     "title": "Reproducibility in the Age of LLMs",
     "section": "Summary",
-    "text": "Summary\n\n\n\nQuestion\nAnswer\n\n\n\n\nLLMs solve reproducibility?\nNo — Computational Env 1st order\n\n\nHelp authors?\nYes — Case 2 automation is real (DeadReckoning)\n\n\nHelp editors?\nYes — log-diffing, README checking (SIVACOR, A&S)\n\n\nLLM-as-data?\nSame principle · harder enforcement"
+    "text": "Summary\n\n\n\nQuestion\nAnswer\n\n\n\n\nLLMs solve reproducibility?\nNo — Computational Env 1st order\n\n\nHelp authors?\nYes — Case 2 automation is real (DeadReckoning)\n\n\nHelp editors?\nYes — log-diffing, README checking (SIVACOR,…)\n\n\nLLM-as-data?\nSame principles · harder enforcement"
   },
   {
     "objectID": "AI-Reproducibility.html#backup-slides",
