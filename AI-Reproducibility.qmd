@@ -16,7 +16,7 @@ highlight-style: pygments
 
 ## Agenda {#sec-questions}
 
-### Three Questions
+
 
 <br>
 
@@ -27,10 +27,12 @@ highlight-style: pygments
 
 3. Will LLMs help **data editors** check replication packages?
 
+4. **General Guidance** when using LLMs in your work.
+
 :::
 
 
----
+<!-- ---
 
 ## What Is an LLM — and Why Does It Matter Here?
 
@@ -59,11 +61,9 @@ A large language _model_ (LLM) is an AI system trained on vast amounts of _data_
 </table>
 
 
-:::
+::: -->
 
 
-
----
 
 ## Q1: Will LLMs Solve Reproducibility? {#sec-q1}
 
@@ -155,7 +155,7 @@ Agent infers, fixes, iterates. Hours (Weeks?) → minutes. **This is where agent
 
 ---
 
-## Q2: Will LLMs Help Authors? {#sec-q2}
+## Q2: Will LLMs Help Authors with Packages? {#sec-q2}
 
 
 ::: {.columns}
@@ -187,13 +187,13 @@ Agent infers, fixes, iterates. Hours (Weeks?) → minutes. **This is where agent
 
 
 
-## Q2: Will LLMs Help Authors?
+## Q2: Will LLMs Help Authors with Packages?
 
 
 ![](/img/dead.png)
 
 
-## Q2: Will LLMs Help Authors? 
+## Q2: Will LLMs Help Authors with Packages? 
 
 
 ### DeadReckoning *(proposed / in development)*
@@ -319,26 +319,96 @@ Run `code/analysis.do` from the project root.
 
 Something like **DeadReckoning** works also for Data Editors. Builds full data map and finds gaps. Helpful first pass for Replicators.
 
+<br>
 
 ::: {.fragment}
 
 ### Big(ger?) issue: Computational Environment
 
-**Andrews & Shapiro (ES, Jan 2026)**
-VM + keylogging · LLM diffs terminal log vs README · flags undocumented steps.
-That machine needs to be able to run _all the jobs_.
+:::
+
+::: {.fragment}
+
+Docker is great, but not widely known. (`DeadReckoning` wants to help.) Also, no silver bullet either.
 
 [**SIVACOR**](https://docs.sivacor.org) *(Vilhuber/Cornell, running for AEA)*
 Author submits ZIP → curated Docker image → automated execution → signed TRO
 Editor verifies without re-running
 
-**Nuvolos** Cloud based computing environment with snapshotting and BYOL
+[**Nuvolos**](https://nuvolos.com) Cloud based computing environment with snapshotting and BYOL
 
 :::
 
 ---
 
-## Back to LLMs: The Integrity Gap {#sec-integrity}
+## Q4: General Guidance
+
+So, what's the actual problem with LLMs when used in my data pipeline? 
+
+
+::: {.fragment}
+
+Well, let's find out. 
+
+:::
+
+##
+
+
+::: {.columns}
+
+::: {.column}
+
+
+![](/img/John_Maynard_Keynes_(1929).jpg)
+
+
+
+:::
+
+::: {.column}
+
+
+::: {.fragment}
+
+> John Maynard Keynes lived ...
+:::
+
+
+::: {.fragment}
+
+What's the next word?
+
+:::
+
+
+
+::: {.fragment}
+
+Let's ask `Llama-3.2-1B`.
+
+![](/img/llama.jpg)
+
+:::
+
+
+
+
+:::
+
+:::
+
+
+
+
+
+##  {background-image="img/keynes-llama.png" background-size="contain" background-position="center"}
+
+
+
+
+
+## The Integrity Gap {#sec-integrity}
 
 With conventional code: read it, run it, diff outputs. Accountability intact.
 
